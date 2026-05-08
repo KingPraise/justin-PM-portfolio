@@ -190,7 +190,9 @@ function toggleNav() {
   if (!nav || !btn) return;
   nav.classList.toggle("open");
   btn.classList.toggle("open");
-  document.body.style.overflow = nav.classList.contains("open") ? "hidden" : "";
+  var isOpen = nav.classList.contains("open");
+  btn.setAttribute("aria-expanded", isOpen);
+  document.body.style.overflow = isOpen ? "hidden" : "";
 }
 function closeNav() {
   var nav = document.getElementById("navLinks");
@@ -198,6 +200,7 @@ function closeNav() {
   if (!nav || !btn) return;
   nav.classList.remove("open");
   btn.classList.remove("open");
+  btn.setAttribute("aria-expanded", "false");
   document.body.style.overflow = "";
 }
 window.addEventListener("scroll", closeNav, { passive: true });

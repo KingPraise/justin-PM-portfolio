@@ -84,9 +84,26 @@ nav.scrolled {
   text-decoration: none;
   transition: color 0.2s;
 }
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible {
   color: var(--terracotta);
 }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 3px rgba(201, 80, 42, 0.18);
+}
+
+button,
+.nav-links a {
+  transition: color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
 .nav-hamburger {
   display: none;
   flex-direction: column;

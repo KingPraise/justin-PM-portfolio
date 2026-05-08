@@ -4,30 +4,73 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Obu Justin · PM Portfolio</title>
+    <title>Obu Justin · Product Manager Portfolio | Startup Growth & Product Strategy</title>
+    <meta name="description" content="Obu Justin is a Product Manager focused on startup growth, product strategy, and scalable revenue systems. Explore case studies, product-led growth work, and contact details." />
+    <meta name="author" content="Obu Justin" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://yourwebsite.com/" />
     <link href="style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link rel="shortcut icon" href="imgs/WhatsApp Image 2026-05-07 at 20.22.49.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/WhatsApp Image 2026-05-07 at 20.22.49.jpeg" type="image/x-icon" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=DM+Sans:wght@300;400;500;600&amp;family=DM+Mono:wght@400;500&amp;display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Obu Justin",
+      "jobTitle": "Product Manager",
+      "description": "Product Manager specializing in growth and early-stage startups",
+      "url": "https://yourwebsite.com",
+      "email": "mailto:hello@yourwebsite.com",
+      "telephone": "+234-800-000-0000",
+      "sameAs": [
+        "https://linkedin.com/in/obujustin",
+        "https://twitter.com/obujustin"
+      ],
+      "knowsAbout": [
+        "Product Strategy",
+        "Growth Systems",
+        "Startup Operations",
+        "Go-to-Market",
+        "User Acquisition",
+        "Revenue Models"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Consulting",
+        "email": "mailto:hello@yourwebsite.com",
+        "telephone": "+234-800-000-0000"
+      },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Product Manager",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Nigeria"
+        }
+      }
+    }
+    </script>
   </head>
   <body>
     <!-- NAV -->
     <div class="glow-cursor" id="glowCursor"></div>
-    <nav>
-      <a
-        class="nav-logo"
-        href="#"
-        style="
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          text-decoration: none;
-        "
-      >
+    <header>
+      <nav role="navigation">
+        <a
+          class="nav-logo"
+          href="#"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+          "
+        >
         <svg
           height="34"
           viewbox="0 0 48 48"
@@ -130,16 +173,19 @@
         </li>
       </ul>
       <button
-        aria-label="Menu"
+        aria-label="Toggle navigation menu"
         class="nav-hamburger"
         id="hamburger"
         onclick="toggleNav()"
+        aria-expanded="false"
       >
         <span> </span>
         <span> </span>
         <span> </span>
       </button>
     </nav>
+    </header>
+    <main>
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-left">
@@ -977,6 +1023,7 @@
           </h2>
         </div>
         <!-- KickstartCo entry - lighter card style -->
+        <article>
         <div
           class="reveal"
           style="
@@ -1193,7 +1240,9 @@
             </div>
           </div>
         </div>
+        </article>
         <div style="height: 1rem"></div>
+        <article>
         <div class="case-study-card reveal">
           <div class="cs-header">
             <div class="cs-badge">Featured Case Study</div>
@@ -2343,9 +2392,11 @@
             </div>
           </div>
         </div>
+        </article>
       </div>
       <div style="height: 2rem"></div>
       <!-- WEB 79 CASE STUDY -->
+      <article>
       <div class="case-study-card reveal">
         <div
           class="cs-header"
@@ -4268,6 +4319,7 @@
             </div>
           </div>
         </div>
+        </article>
       </div>
     </section>
     <!-- CERTIFICATIONS -->
@@ -6172,6 +6224,7 @@
         </div>
       </div>
     </section>
+    </main>
     <!-- FOOTER -->
     <footer>
       <div style="display: flex; align-items: center; gap: 0.75rem">
