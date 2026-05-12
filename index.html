@@ -8,7 +8,7 @@
     <meta name="description" content="Obu Justin is a Product Manager focused on startup growth, product strategy, and scalable revenue systems. Explore case studies, product-led growth work, and contact details." />
     <meta name="author" content="Obu Justin" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://yourwebsite.com/" />
+    <link rel="canonical" href="https://obujustin.netlify.app/" />
     <link href="style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link rel="shortcut icon" href="imgs/WhatsApp Image 2026-05-07 at 20.22.49.jpeg" type="image/x-icon" />
@@ -24,7 +24,7 @@
       "name": "Obu Justin",
       "jobTitle": "Product Manager",
       "description": "Product Manager specializing in growth and early-stage startups",
-      "url": "https://yourwebsite.com",
+      "url": "https://obujustin.netlify.app/",
       "email": "mailto:hello@yourwebsite.com",
       "telephone": "+234-800-000-0000",
       "sameAs": [
@@ -1252,9 +1252,12 @@
             </div>
           </div>
           <div
+            class="cs-toggle-area"
+            onclick="event.stopPropagation(); toggleCS(this)"
             style="
               padding: 1.5rem 2rem;
               border-top: 1px solid rgba(255, 255, 255, 0.08);
+              cursor: pointer;
             "
           >
             <p
@@ -1273,7 +1276,7 @@
             <button
               aria-expanded="false"
               class="cs-toggle-btn"
-              onclick="toggleCS(this)"
+              onclick="event.stopPropagation(); toggleCS(this)"
               style="
                 border-top: none;
                 padding: 0;
@@ -2416,7 +2419,9 @@
           </div>
         </div>
         <div
-          style="padding: 1.2rem 2rem 0.5rem 2rem; background: var(--card-bg)"
+          class="cs-toggle-area"
+          onclick="event.stopPropagation(); toggleCS(this)"
+          style="padding: 1.5rem 2rem; background: var(--card-bg); cursor: pointer;"
         >
           <p
             style="
@@ -2434,7 +2439,7 @@
           <button
             aria-expanded="false"
             class="cs-toggle-btn"
-            onclick="toggleCS(this)"
+            onclick="event.stopPropagation(); toggleCS(this)"
             style="
               border-top: none;
               padding: 0 0 1.2rem 0;
@@ -4319,6 +4324,7 @@
             </div>
           </div>
         </div>
+      </div>
         </article>
       </div>
     </section>
@@ -4343,7 +4349,8 @@
         >
           <!-- Cert 1: Aha! PM Professional -->
           <div
-            class="reveal"
+            class="reveal cert-card"
+            onclick="openCertModal(this)"
             onmouseenter="
               this.style.transform = 'translateY(-4px)';
               this.style.boxShadow = '0 16px 48px rgba(0,0,0,0.12)';
@@ -4353,6 +4360,7 @@
               this.style.boxShadow = '0 8px 32px rgba(0,0,0,0.06)';
             "
             style="
+              cursor: pointer;
               background: var(--card-bg);
               border: 1px solid var(--rule);
               box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
@@ -4450,7 +4458,8 @@
           </div>
           <!-- Cert 2: Advanced Lead Generation -->
           <div
-            class="reveal"
+            class="reveal cert-card"
+            onclick="openCertModal(this)"
             onmouseenter="
               this.style.transform = 'translateY(-4px)';
               this.style.boxShadow = '0 16px 48px rgba(0,0,0,0.12)';
@@ -4460,6 +4469,7 @@
               this.style.boxShadow = '0 8px 32px rgba(0,0,0,0.06)';
             "
             style="
+              cursor: pointer;
               background: var(--card-bg);
               border: 1px solid var(--rule);
               box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
@@ -4813,6 +4823,7 @@
             >
               Notion
             </span>
+            <div class="tool-score" data-score="95">0%</div>
           </div>
           <!-- Jira -->
           <div
@@ -4858,6 +4869,7 @@
             >
               Jira
             </span>
+            <div class="tool-score" data-score="92">0%</div>
           </div>
           <!-- Google Analytics -->
           <!-- Canva -->
@@ -4905,6 +4917,7 @@
             >
               G. Analytics
             </span>
+            <div class="tool-score" data-score="88">0%</div>
           </div>
           <!-- HubSpot -->
           <div
@@ -4950,6 +4963,7 @@
             >
               HubSpot
             </span>
+            <div class="tool-score" data-score="90">0%</div>
           </div>
           <!-- Meta Ads -->
           <div
@@ -4995,6 +5009,7 @@
             >
               Meta Ads
             </span>
+            <div class="tool-score" data-score="86">0%</div>
           </div>
           <!-- Figma -->
           <div
@@ -5040,6 +5055,7 @@
             >
               Figma
             </span>
+            <div class="tool-score" data-score="94">0%</div>
           </div>
           <!-- Slack -->
           <div
@@ -5105,6 +5121,7 @@
             >
               Slack
             </span>
+            <div class="tool-score" data-score="89">0%</div>
           </div>
           <!-- Zapier -->
           <div
@@ -5150,6 +5167,7 @@
             >
               Zapier
             </span>
+            <div class="tool-score" data-score="87">0%</div>
           </div>
         </div>
       </div>
@@ -6225,6 +6243,13 @@
       </div>
     </section>
     </main>
+    <div id="certModal" class="cert-modal" onclick="if (event.target === this) closeCertModal()">
+      <div class="cert-modal-content">
+        <button type="button" class="cert-modal-close" onclick="closeCertModal()">×</button>
+        <img alt="" src="" />
+        <div class="cert-modal-caption"></div>
+      </div>
+    </div>
     <!-- FOOTER -->
     <footer>
       <div style="display: flex; align-items: center; gap: 0.75rem">

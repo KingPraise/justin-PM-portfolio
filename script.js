@@ -130,6 +130,62 @@ document
     staggerObs.observe(el);
   });
 
+// ── Certificate modal ──
+function openCertModal(card) {
+  var modal = document.getElementById("certModal");
+  if (!modal) return;
+  var sourceImg = card.querySelector("img");
+  var titleEl = card.querySelector('div[style*="Playfair Display"]');
+  var modalImg = modal.querySelector("img");
+  var modalCaption = modal.querySelector(".cert-modal-caption");
+  if (!sourceImg || !modalImg || !modalCaption) return;
+  modalImg.src = sourceImg.src;
+  modalImg.alt = sourceImg.alt || "Certificate";
+  modalCaption.textContent = titleEl
+    ? titleEl.textContent.trim()
+    : sourceImg.alt || "Certificate";
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCertModal() {
+  var modal = document.getElementById("certModal");
+  if (!modal) return;
+  modal.classList.remove("open");
+  var modalImg = modal.querySelector("img");
+  if (modalImg) modalImg.src = "";
+  document.body.style.overflow = "";
+}
+
+function animateToolScore(el) {
+  var target = parseInt(el.getAttribute("data-score"), 10) || 0;
+  var start = null;
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    var progress = Math.min((timestamp - start) / 800, 1);
+    el.textContent = Math.round(progress * target) + "%";
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+var toolScoreObs = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        animateToolScore(e.target);
+        toolScoreObs.unobserve(e.target);
+      }
+    });
+  },
+  { threshold: 0.2 },
+);
+
+document.querySelectorAll(".tool-score").forEach(function (el) {
+  el.textContent = "0%";
+  toolScoreObs.observe(el);
+});
+
 // ── FAQ accordion ──
 function toggleFaq(btn) {
   var answer = btn.nextElementSibling;

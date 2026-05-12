@@ -756,6 +756,26 @@ footer {
     opacity: 1;
   }
 }
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -766,6 +786,12 @@ footer {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+.reveal.visible:nth-child(odd) {
+  animation: slideInLeft 0.8s ease forwards;
+}
+.reveal.visible:nth-child(even) {
+  animation: slideInRight 0.8s ease forwards;
 } /* ── SCROLLBAR ── */
 ::-webkit-scrollbar {
   width: 4px;
@@ -967,6 +993,78 @@ footer {
 }
 .cs-body-wrap.open {
   display: block;
+}
+
+.tool-score {
+  margin-top: 0.75rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  text-align: center;
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 9999;
+  padding: 1.5rem;
+}
+
+.cert-modal.open {
+  display: flex;
+}
+
+.cert-modal-content {
+  position: relative;
+  width: min(960px, 100%);
+  max-height: min(90vh, 100%);
+  background: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.35);
+}
+
+.cert-modal-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #050505;
+}
+
+.cert-modal-caption {
+  padding: 1rem 1.25rem 1.5rem;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.cert-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .cs-header-w79::before {
